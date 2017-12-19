@@ -11,17 +11,20 @@ http//localhost:8080/mappings
 http//localhost:8080/env
 
 项目要点：
-1. 配置服务器
-1a. 代码添加注解
-@EnableConfigServer
-1b. 配置文件中配置(bootstrap.properties)    
+1. 配置服务器    
+1a. 代码添加注解    
+@EnableConfigServer    
+1b. 配置文件中配置(bootstrap.properties)   
+<pre>
 spring.cloud.config.server.git.uri=https://github.com/wllxyz/spring-cloud-config-sample.git
+</pre>
 1c. pom.xml项目依赖添加    
+<pre>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-
+</pre>
 
 2.spring-cloud应用程序    
 2a. 代码在需要更新配置的地方添加@RefreshScope注解    
@@ -35,7 +38,9 @@ spring.cloud.config.uri=http://localhost:8888
 management.security.enabled=false
 </pre>
 2c.pom.xml项目依赖
+<pre>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
+</pre>
